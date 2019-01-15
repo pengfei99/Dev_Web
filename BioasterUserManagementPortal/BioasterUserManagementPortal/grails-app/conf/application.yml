@@ -93,7 +93,8 @@ dataSource:
     jmxExport: true
    # driverClassName: org.h2.Driver
     driverClassName: org.postgresql.Driver
-    username: 'bump_admin'
+   # password of the data base 
+   username: 'bump_admin'
     password: 'changeMe'
 
 environments:
@@ -137,6 +138,7 @@ grails:
          ldap:
             context:
                managerDn: 'cn=bump,ou=admin_accounts,dc=bioaster,dc=org'
+            # password of the ldap server
                managerPassword: changeMe
                server: 'ldap://auth-ldap.bioaster.org:389'
             authorities:
