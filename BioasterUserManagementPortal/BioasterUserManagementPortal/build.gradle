@@ -1,0 +1,93 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url "https://repo.grails.org/grails/core"
+        }
+
+    }
+    dependencies {
+        classpath "org.grails:grails-gradle-plugin:$grailsVersion"
+        classpath "com.bertramlabs.plugins:asset-pipeline-gradle:2.11.6"
+        classpath "org.grails.plugins:hibernate5:6.0.4"
+    }
+}
+
+version "0.1"
+group "bioasterusermanagementportal"
+
+apply plugin:"eclipse"
+apply plugin:"idea"
+apply plugin:"war"
+apply plugin:"org.grails.grails-web"
+apply plugin:"org.grails.grails-gsp"
+apply plugin:"asset-pipeline"
+
+repositories {
+    mavenLocal()
+    maven { url "https://repo.grails.org/grails/core" }
+    /*add maven repo for wso2 dependencies*/
+    maven { url "http://dist.wso2.org/maven2/"}
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.grails:grails-bom:$grailsVersion"
+    }
+    applyMavenExclusions false
+}
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-logging"
+    compile "org.springframework.boot:spring-boot-autoconfigure"
+    compile "org.grails:grails-core"
+    compile "org.springframework.boot:spring-boot-starter-actuator"
+    compile "org.springframework.boot:spring-boot-starter-tomcat"
+    compile "org.grails:grails-dependencies"
+    compile "org.grails:grails-web-boot"
+    compile "org.grails.plugins:cache"
+    compile "org.grails.plugins:scaffolding"
+    compile "org.grails.plugins:hibernate5"
+    compile "org.hibernate:hibernate-core:5.1.2.Final"
+    compile "org.hibernate:hibernate-ehcache:5.1.2.Final"
+    console "org.grails:grails-console"
+    profile "org.grails.profiles:web"
+    runtime "com.bertramlabs.plugins:asset-pipeline-grails:2.11.6"
+    runtime "com.h2database:h2"
+    testCompile "org.grails:grails-plugin-testing"
+    testCompile "org.grails.plugins:geb"
+    testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
+    testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
+    // https://mvnrepository.com/artifact/javax.mail/mail
+    compile "javax.mail:mail:1.4.1"
+    compile "org.grails.plugins:spring-security-core:3.1.1"
+    compile 'org.grails.plugins:spring-security-ldap:3.0.1'
+    compile 'org.postgresql:postgresql:42.0.0'
+
+    compile group: 'org.wso2.carbon', name: 'org.wso2.carbon.identity.entitlement.stub', version: '4.0.1'
+    compile group: 'org.apache.axis2.wso2', name: 'axis2-client', version: '1.6.1.wso2v10'
+    // https://mvnrepository.com/artifact/org.wso2.securevault/org.wso2.securevault
+    compile group: 'org.wso2.securevault', name: 'org.wso2.securevault', version: '1.0.0-wso2v2'
+    // https://mvnrepository.com/artifact/org.antlr/stringtemplate
+    compile group: 'org.antlr', name: 'stringtemplate', version: '3.2.1'
+    // apache commons lang3
+    compile group: 'org.apache.commons', name:'commons-lang3', version: '3.6'
+
+    //dependencies for export json
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.8.0'
+
+
+
+
+
+}
+
+bootRun {
+    jvmArgs('-Dspring.output.ansi.enabled=always')
+}
+
+
+assets {
+    minifyJs = true
+    minifyCss = true
+}

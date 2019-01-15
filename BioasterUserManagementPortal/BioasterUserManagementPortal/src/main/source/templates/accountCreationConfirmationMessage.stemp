@@ -1,0 +1,19 @@
+**************Please do not reply this email***************
+
+This email is sent automatically by BIOASTER user management portal.
+
+Dear admin users,
+
+A new user account has been created in OPENLdap server
+
+*********************************************
+
+The user uid is : ${uid}
+
+The validator is : ${validator}
+
+*********************************************
+
+Please go to the BIOASTER User management admin dashboard to check user information
+
+Please contact the ${supportMail}, if you have any problems.

@@ -1,0 +1,17 @@
+**************Please do not reply this email***************
+
+This email is sent automatically by BIOASTER user management portal.
+
+Dear admin user,
+
+A new user account has been imported from BIOASTER Active Directory to OpenLdap
+
+*********************************************
+
+The user uid is : ${userName}
+
+*********************************************
+
+Please go to the BIOASTER User management portal to check the account information
+
+Please contact the ${supportMail}, if you have any problems.

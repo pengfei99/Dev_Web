@@ -1,0 +1,54 @@
+footer {
+    margin-top:10px;
+    padding-top:10px;
+    padding-bottom:10px;
+    background-color:rgb(255,255,255);
+}
+
+footer .subFooter {
+    text-align: center;
+    color: #d4d4d4;
+    font-size: 12px;
+    padding: 12px 0;
+    background-color: #222;
+}
+footer .footerWrap {
+    padding-bottom: 15px;
+}
+
+#cc_logo{
+    width: 136px;
+    height: 42px;
+}
+#comodo_logo{
+    width: 30px;
+    height: 18px;
+}
+img {
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+}
+.navbar .brand{
+    display: block;
+    height: 125px;
+    width: 246px;
+    padding: 0;
+    float:left;
+    position: absolute;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 70%;
+    margin: auto;
+}
+.navbar-default{
+    background-color: #337ab7;
+}
+.navbar .nav > li > a {
+    color: rgb(255,255,255);
+}
+.navbar-default .navbar-brand{
+    color: rgb(255,255,255);
+}
